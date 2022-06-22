@@ -2,7 +2,7 @@
 #include "max6675.h"
 #include <LiquidCrystal_I2C.h>
 #include <Arduino.h>
-//#include <EEPROM.h>
+#include <EEPROM.h>
 #include <PID_v1.h>
 
 #define maxTarget 500
@@ -123,7 +123,6 @@ void IRAM_ATTR isrsetButton()
 {
   butDetec = !butDetec;
   refreshLCD = true;
-  delayMicroseconds(30);
 }
 
 //Ham ngat cho nut nhan runMode/holdMode
@@ -131,7 +130,6 @@ void IRAM_ATTR isrrunButton()
 {
   runStatus = !runStatus;
   refreshLCD = true;
-  delayMicroseconds(30);
 }
 
 //Khai bao + ham timer0 doc nhiet do
